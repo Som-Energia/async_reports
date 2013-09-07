@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+    <head>
+        {% if job.status not in ('finished', None) %}
+        <meta http-equiv="refresh" content="5">
+        {% endif %}
+        <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
+        <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+    </head>
+    <body>
+        <div class="container">
+            <div class="offset2 span8">
+                <h1>Your job id is {{ job.id }} ({{ job.status }})</h1>
+                <p><i class="icon-inbox"> </i>{{ job.origin }}</p>
+                <p><i class="icon-time"> </i>{{ rt }}</p>
+                <p><i class="icon-book"> </i>{{ job.meta['format'] }}</p>
+                <a class="btn btn-danger" href="/job/{{ job.id }}/cancel"><i class="icon-ban-circle"> </i>Cancel</a>
+                {% if job.status == 'finished' %}
+                <a class="btn btn-success" href="/job/{{ job.id }}/download"><i class="icon-cloud-download"> </i>Download</a>
+                {% endif %}
+            </div>
+        </div>
+    </body>
+</html>
