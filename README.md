@@ -1,5 +1,8 @@
 # Async Reports for OpenERP
 
+In this moment this is only v5 compatible, if you need it for a modern version
+you can send a pull request :)
+
 ## How to install
 
 1. Install dependencies
