@@ -1,4 +1,4 @@
 Werkzeug
-Jinj2
+Jinja2
 rq
 times
