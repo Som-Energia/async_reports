@@ -11,7 +11,7 @@ you can send a pull request :)
   $ pip install -r async_reports/requirements.txt
   ```
 
-2. Install [oorq](https://github.com/gisce/ooor) module
+2. Install [oorq](https://github.com/gisce/oorq) module
 2. Put the module in your OpenERP $ADDONS_PATH
 3. Install the module
 
