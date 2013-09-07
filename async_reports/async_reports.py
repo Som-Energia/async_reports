@@ -98,8 +98,8 @@ def async_report_report(db, uid, passwd, object, ids, datas=None, context=None):
     job = q.enqueue(report, conf_attrs, db, uid, object, ids, datas, context)
     job.result_ttl = 86400
     job.save()
-    # Comprovem el timeout si és més gran retornem com a report la pàgina web
-    # si no ja retornem el report
+    # Check the configured timeout for the report. If the timeout is reached
+    # then return a html report which redirects to the job info page.
     timeout = int(config.get('report_timeout', 5))
     protocol = 'http'
     if config['secure']:
